@@ -1,0 +1,102 @@
+[
+  {
+    "id": "event_001",
+    "name": "Tech Innovators Conference 2025",
+    "thumbnail": "https://i.ibb.co/S4L1BrWN/Bid3-min.png",
+    "category": "Technology",
+    "date": "2025-05-15",
+    "location": "Dhaka Convention Center, Dhaka",
+    "entry_fee": 500,
+    "description": "An exclusive gathering of tech leaders and innovators from..."
+  },
+  {
+    "id": "event_002",
+    "name": "Global AI Summit 2025",
+    "thumbnail": "https://i.ibb.co/PZpjxdr9/event-002.jpg",
+    "category": "Technology",
+    "date": "2025-06-12",
+    "location": "Radisson Blu, Dhaka",
+    "entry_fee": 1200,
+    "description": "A deep dive into neural networks and the future of generative AI in South Asia."
+  },
+  {
+    "id": "event_003",
+    "name": "Urban Photography Workshop",
+    "thumbnail": "https://i.ibb.co/y2MWpRH/event-003.jpg",
+    "category": "Art & Culture",
+    "date": "2025-07-05",
+    "location": "Dhanmondi Lake, Dhaka",
+    "entry_fee": 300,
+    "description": "Learn the secrets of street photography from industry professionals."
+  },
+  {
+    "id": "event_004",
+    "name": "Green Living Expo",
+    "thumbnail": "https://i.ibb.co/zwvXx0X/event-004.jpg",
+    "category": "Lifestyle",
+    "date": "2025-08-20",
+    "location": "BICC, Agargaon",
+    "entry_fee": 0,
+    "description": "Showcasing sustainable products and eco-friendly home solutions for a better planet."
+  },
+  {
+    "id": "event_005",
+    "name": "E-Commerce Growth Boot Camp",
+    "thumbnail": "https://i.ibb.co/mC1ZxVL9/event-005.jpg",
+    "category": "Business",
+    "date": "2025-09-10",
+    "location": "Gulshan Club, Dhaka",
+    "entry_fee": 2500,
+    "description": "Helping local entrepreneurs scale their online stores to international markets."
+  },
+  {
+    "id": "event_006",
+    "name": "Indie Music Fest",
+    "thumbnail": "https://i.ibb.co/wFys0w8d/event-006.jpg",
+    "category": "Entertainment",
+    "date": "2025-10-15",
+    "location": "Army Stadium, Dhaka",
+    "entry_fee": 800,
+    "description": "A night featuring the best underground bands and solo artists from across the country."
+  },
+  {
+    "id": "event_007",
+    "name": "National Robotics Challenge",
+    "thumbnail": "https://i.ibb.co/3yZQtRhm/event-007.jpg",
+    "category": "Technology",
+    "date": "2025-11-22",
+    "location": "BUET Auditorium, Dhaka",
+    "entry_fee": 150,
+    "description": "Students from various universities compete in autonomous drone and rover challenges."
+  },
+  {
+    "id": "event_008",
+    "name": "Culinary Masterclass: Fusion",
+    "thumbnail": "https://i.ibb.co/pr6RxKBg/event-008.jpg",
+    "category": "Food",
+    "date": "2025-12-05",
+    "location": "Pan Pacific Sonargaon, Dhaka",
+    "entry_fee": 3500,
+    "description": "Master the art of blending traditional Bengali flavors with Mediterranean techniques."
+  },
+  {
+    "id": "event_009",
+    "name": "Health & Wellness Retreat",
+    "thumbnail": "https://i.ibb.co/Vc4zrGxv/event-009.jpg",
+    "category": "Health",
+    "date": "2026-01-18",
+    "location": "Purbachal 300ft, Dhaka",
+    "entry_fee": 600,
+    "description": "Morning yoga, meditation sessions, and nutrition workshops led by certified experts."
+  },
+  {
+    "id": "event_010",
+    "name": "Start-Up Pitch Night",
+    "thumbnail": "https://i.ibb.co/mkMHr06/event-010.jpg",
+    "category": "Business",
+    "date": "2026-02-14",
+    "location": "Silicon Tower, Banani",
+    "entry_fee": 0,
+    "description": "Early-stage startups pitch their ideas to a panel of venture capitalists and angel investors."
+  }
+]
