@@ -1,19 +1,41 @@
 import React from "react";
 import { FaRegUserCircle } from "react-icons/fa";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import logo from "../assets/logo.png";
+import "../Component/CssFile/NavStyle.css";
 
 const NavBar = () => {
   const link = (
     <>
       <li className="text-2xl mx-5">
-        <Link to="/">Home</Link>{" "}
+        <NavLink
+          to="/"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "active" : ""
+          }
+        >
+          Home
+        </NavLink>
       </li>
       <li className="text-2xl mx-5">
-        <Link to="about">About</Link>{" "}
+        <NavLink
+          to="about"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "active" : ""
+          }
+        >
+          About
+        </NavLink>
       </li>
       <li className="text-2xl mx-5">
-        <Link to="event">Event</Link>
+        <NavLink
+          to="event"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "active" : ""
+          }
+        >
+          Event
+        </NavLink>
       </li>
     </>
   );
@@ -54,22 +76,14 @@ const NavBar = () => {
         <ul className="menu menu-horizontal px-1">{link}</ul>
       </div>
       <div className="navbar-end mr-10">
-        <button className="btn btn-ghost btn-circle">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
-        </button>
+        <div>
+          <Link to="/auth/login" className="btn mx-5">
+            Log In
+          </Link>
+          <Link to="/auth/register" className="btn">
+            Register
+          </Link>
+        </div>
         <button className="btn btn-ghost btn-circle">
           <FaRegUserCircle className="text-3xl" />
         </button>

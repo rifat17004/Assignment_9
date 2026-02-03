@@ -5,6 +5,8 @@
     "thumbnail": "https://i.ibb.co/S4L1BrWN/Bid3-min.png",
     "category": "Technology",
     "date": "2025-05-15",
+    "start_time": "09:00",
+    "end_time": "17:00",
     "location": "Dhaka Convention Center, Dhaka",
     "entry_fee": 500,
     "description": "An exclusive gathering of tech leaders and innovators from..."
@@ -15,6 +17,8 @@
     "thumbnail": "https://i.ibb.co/PZpjxdr9/event-002.jpg",
     "category": "Technology",
     "date": "2025-06-12",
+    "start_time": "10:30",
+    "end_time": "18:30",
     "location": "Radisson Blu, Dhaka",
     "entry_fee": 1200,
     "description": "A deep dive into neural networks and the future of generative AI in South Asia."
@@ -25,6 +29,8 @@
     "thumbnail": "https://i.ibb.co/y2MWpRH/event-003.jpg",
     "category": "Art & Culture",
     "date": "2025-07-05",
+    "start_time": "15:00",
+    "end_time": "19:00",
     "location": "Dhanmondi Lake, Dhaka",
     "entry_fee": 300,
     "description": "Learn the secrets of street photography from industry professionals."
@@ -35,6 +41,8 @@
     "thumbnail": "https://i.ibb.co/zwvXx0X/event-004.jpg",
     "category": "Lifestyle",
     "date": "2025-08-20",
+    "start_time": "09:00",
+    "end_time": "20:00",
     "location": "BICC, Agargaon",
     "entry_fee": 0,
     "description": "Showcasing sustainable products and eco-friendly home solutions for a better planet."
@@ -45,6 +53,8 @@
     "thumbnail": "https://i.ibb.co/mC1ZxVL9/event-005.jpg",
     "category": "Business",
     "date": "2025-09-10",
+    "start_time": "11:00",
+    "end_time": "16:00",
     "location": "Gulshan Club, Dhaka",
     "entry_fee": 2500,
     "description": "Helping local entrepreneurs scale their online stores to international markets."
@@ -55,6 +65,8 @@
     "thumbnail": "https://i.ibb.co/wFys0w8d/event-006.jpg",
     "category": "Entertainment",
     "date": "2025-10-15",
+    "start_time": "18:00",
+    "end_time": "23:30",
     "location": "Army Stadium, Dhaka",
     "entry_fee": 800,
     "description": "A night featuring the best underground bands and solo artists from across the country."
@@ -65,6 +77,8 @@
     "thumbnail": "https://i.ibb.co/3yZQtRhm/event-007.jpg",
     "category": "Technology",
     "date": "2025-11-22",
+    "start_time": "08:30",
+    "end_time": "18:00",
     "location": "BUET Auditorium, Dhaka",
     "entry_fee": 150,
     "description": "Students from various universities compete in autonomous drone and rover challenges."
@@ -75,6 +89,8 @@
     "thumbnail": "https://i.ibb.co/pr6RxKBg/event-008.jpg",
     "category": "Food",
     "date": "2025-12-05",
+    "start_time": "12:00",
+    "end_time": "15:00",
     "location": "Pan Pacific Sonargaon, Dhaka",
     "entry_fee": 3500,
     "description": "Master the art of blending traditional Bengali flavors with Mediterranean techniques."
@@ -85,6 +101,8 @@
     "thumbnail": "https://i.ibb.co/Vc4zrGxv/event-009.jpg",
     "category": "Health",
     "date": "2026-01-18",
+    "start_time": "06:00",
+    "end_time": "10:00",
     "location": "Purbachal 300ft, Dhaka",
     "entry_fee": 600,
     "description": "Morning yoga, meditation sessions, and nutrition workshops led by certified experts."
@@ -95,6 +113,8 @@
     "thumbnail": "https://i.ibb.co/mkMHr06/event-010.jpg",
     "category": "Business",
     "date": "2026-02-14",
+    "start_time": "17:30",
+    "end_time": "21:00",
     "location": "Silicon Tower, Banani",
     "entry_fee": 0,
     "description": "Early-stage startups pitch their ideas to a panel of venture capitalists and angel investors."
