@@ -1,10 +1,13 @@
-import React from "react";
+import React, { use } from "react";
 import { FaRegUserCircle } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
 import logo from "../assets/logo.png";
 import "../Component/CssFile/NavStyle.css";
+import { AuthContext } from "../Datasharing/AuthProvider";
 
 const NavBar = () => {
+  const { user, signOutUser } = use(AuthContext);
+
   const link = (
     <>
       <li className="text-2xl mx-5">
@@ -77,12 +80,15 @@ const NavBar = () => {
       </div>
       <div className="navbar-end mr-10">
         <div>
-          <Link to="/auth/login" className="btn mx-5">
-            Log In
-          </Link>
-          <Link to="/auth/register" className="btn">
-            Register
-          </Link>
+          {user ? (
+            <button onClick={signOutUser} className="btn mx-5">
+              Log out
+            </button>
+          ) : (
+            <Link to="/auth/login" className="btn mx-5">
+              Log In
+            </Link>
+          )}
         </div>
         <button className="btn btn-ghost btn-circle">
           <FaRegUserCircle className="text-3xl" />
