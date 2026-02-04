@@ -8,6 +8,8 @@ import Login from "../Component/Login";
 import Register from "../Component/Register";
 import PrivateRoutes from "./PrivateRoutes";
 import { Suspense } from "react";
+import PageNotFound from "../Component/PageNotFound";
+import EventGallery from "../Component/EventGallery";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,21 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
+      {
+        path: "/eventGallery",
+
+        element: (
+          <Suspense
+            fallback={
+              <span className="loading loading-spinner loading-2xl"></span>
+            }
+          >
+            <PrivateRoutes>
+              <EventGallery />
+            </PrivateRoutes>
+          </Suspense>
+        ),
+      },
     ],
   },
   {
@@ -45,5 +62,6 @@ const router = createBrowserRouter([
       { path: "/auth/register", Component: Register },
     ],
   },
+  { path: "*", Component: PageNotFound },
 ]);
 export default router;

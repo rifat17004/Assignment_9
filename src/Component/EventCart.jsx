@@ -3,7 +3,6 @@ import { FaClock, FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "react-router";
 
 const EventCart = ({ d }) => {
-  console.log(d);
   const { name, thumbnail, entry_fee, start_time, end_time, location } = d;
   return (
     <div className="card lg:card-side bg-base-100   border border-gray-100 overflow-hidden max-w-2xl p-5 rounded-none">

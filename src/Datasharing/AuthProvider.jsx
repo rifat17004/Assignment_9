@@ -1,8 +1,10 @@
 import React, { createContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
+  GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
 } from "firebase/auth";
 import { auth } from "../Component/Firebase/Firebase.init";
@@ -13,6 +15,22 @@ const AuthProvider = ({ children }) => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
+  // sign in with google
+
+  const googleSign = () => {
+    setLoading(true);
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {})
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setError(errorMessage);
+        const email = error.customData.email;
+        const credential = GoogleAuthProvider.credentialFromError(error);
+      });
+  };
   // email pass authentacion create new user
   const emailPassAuthen = (email, password) => {
     setLoading(true);
@@ -67,6 +85,7 @@ const AuthProvider = ({ children }) => {
   }, [user]);
   const authData = {
     emailPassAuthen,
+    googleSign,
     OldUserLogin,
     signOutUser,
     user,

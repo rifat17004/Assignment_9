@@ -8,6 +8,7 @@ import { AuthContext } from "../Datasharing/AuthProvider";
 const NavBar = () => {
   const { user, signOutUser } = use(AuthContext);
 
+  console.log(user);
   const link = (
     <>
       <li className="text-2xl mx-5">
@@ -40,6 +41,18 @@ const NavBar = () => {
           Event
         </NavLink>
       </li>
+      {user && (
+        <li className="text-2xl mx-5">
+          <NavLink
+            to="/eventGallery"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "active" : ""
+            }
+          >
+            Gallery
+          </NavLink>
+        </li>
+      )}
     </>
   );
 
@@ -90,12 +103,39 @@ const NavBar = () => {
             </Link>
           )}
         </div>
-        <button className="btn btn-ghost btn-circle">
-          <FaRegUserCircle className="text-3xl" />
-        </button>
+
+        <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+          <div className="avatar cursor-pointer">
+            <div className="w-10 rounded-full   hover:scale-105 transition-transform">
+              {user?.photoURL ? (
+                <img
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  src={user?.photoURL}
+                  alt=""
+                />
+              ) : (
+                <FaRegUserCircle className="text-3xl w-full" />
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 export default NavBar;
+
+{
+  /* <button className="btn btn-ghost btn-circle">
+          {user?.photoURL ? (
+            <img
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src={user?.photoURL}
+              alt=""
+            />
+          ) : (
+            <FaRegUserCircle className="text-3xl" />
+          )}
+        </button> */
+}
