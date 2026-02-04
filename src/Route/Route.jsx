@@ -6,6 +6,8 @@ import HomeLayout from "../Layout/HomeLayout";
 import AuthLayout from "../Layout/AuthLayout";
 import Login from "../Component/Login";
 import Register from "../Component/Register";
+import PrivateRoutes from "./PrivateRoutes";
+import { Suspense } from "react";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +20,21 @@ const router = createBrowserRouter([
         Component: Home,
       },
       { path: "/about", Component: About },
-      { path: "/event", Component: Event },
+      {
+        path: "/event",
+        loader: () => fetch("/event.json"),
+        element: (
+          <Suspense
+            fallback={
+              <span className="loading loading-spinner loading-2xl"></span>
+            }
+          >
+            <PrivateRoutes>
+              <Event />
+            </PrivateRoutes>
+          </Suspense>
+        ),
+      },
     ],
   },
   {

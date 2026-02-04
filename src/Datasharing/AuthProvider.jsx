@@ -19,16 +19,12 @@ const AuthProvider = ({ children }) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        setLoading(false);
         setError("");
         alert("User Created Succesfully");
       })
       .catch((error) => {
-        setLoading(true);
         const errorCode = error.code;
         const errorMessage = error.message;
-        setError(errorMessage);
-        setLoading(false);
       });
   };
 
@@ -39,16 +35,13 @@ const AuthProvider = ({ children }) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         alert("Login Succesfully");
-        setLoading(false);
         setError("");
       })
       .catch((error) => {
         setLoading(true);
-
         const errorCode = error.code;
         const errorMessage = error.message;
         setError(errorMessage);
-        setLoading(false);
       });
   };
 
@@ -58,11 +51,9 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     signOut(auth)
       .then(() => {
-        setLoading(false);
         alert("Log Out Succesfully");
       })
       .catch((error) => {
-        setLoading(false);
         setError(error);
       });
   };
@@ -70,6 +61,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
+      setLoading(false);
     });
     return () => unSubscribe();
   }, [user]);

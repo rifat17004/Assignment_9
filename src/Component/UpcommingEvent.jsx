@@ -3,12 +3,11 @@ import AllEventsDisplay from "./AllEventsDisplay";
 
 const UpcommingEvent = ({ data }) => {
   return (
-    <div className="flex flex-col items-center justify-center">
-      <h1 className="text-2xl">Upcomming events</h1>
-      <h1 className="text-5xl">
-        Latest <span className="font-bold">Awesome Events</span>
+    <div className="flex flex-col items-center justify-center ">
+      <h1 className="text-5xl mt-20">
+        Latest <span className="font-bold ">Awesome Events</span>
       </h1>
-      <div className=" grid grid-cols-12 gap-4 my-25">
+      <div className=" grid grid-cols-12 gap-4 my-10">
         <div className=" col-span-5 ml-8 text-justify ">
           <h1 className="text-2xl mb-5">We are Demo</h1>
           <h1 className="text-6xl font-bold mb-5">

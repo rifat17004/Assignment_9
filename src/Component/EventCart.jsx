@@ -1,5 +1,6 @@
 import React from "react";
 import { FaClock, FaMapMarkerAlt } from "react-icons/fa";
+import { Link } from "react-router";
 
 const EventCart = ({ d }) => {
   console.log(d);
@@ -41,9 +42,11 @@ const EventCart = ({ d }) => {
           </div>
         </div>
         <div className="card-actions mt-8">
-          <button className="btn btn-ghost bg-gray-100 hover:bg-gray-200 text-gray-600 border-none rounded-full w-full uppercase tracking-widest font-bold">
-            Tickets & Details
-          </button>
+          <Link to="/event">
+            <button className="btn btn-ghost bg-gray-100 hover:bg-gray-200 text-gray-600 border-none rounded-full w-full uppercase tracking-widest font-bold">
+              View More
+            </button>
+          </Link>
         </div>
       </div>
     </div>

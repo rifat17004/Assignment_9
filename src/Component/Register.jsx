@@ -1,10 +1,11 @@
 import React, { use } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Datasharing/AuthProvider";
 
 const Register = () => {
   const { emailPassAuthen, error } = use(AuthContext);
 
+  const navigate = useNavigate();
   const hangleRegisterSubmit = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -13,9 +14,10 @@ const Register = () => {
     const pass = e.target.pass.value;
     emailPassAuthen(email, pass);
     e.target.reset();
+    navigate("/", { replace: true });
   };
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero   my-10">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
         <h1 className="text-5xl font-bold mt-7 text-center">Please Register</h1>
         <div className="card-body">

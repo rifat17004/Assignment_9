@@ -1,19 +1,22 @@
 import React, { use } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Datasharing/AuthProvider";
 
 const Login = () => {
   const { OldUserLogin, error } = use(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const pass = e.target.pass.value;
     OldUserLogin(email, pass);
     e.target.reset();
+    navigate(location.state?.from?.pathname || "/", { replace: true });
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero   my-10">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
         <h1 className="text-5xl font-bold mt-7 text-center">Please Login</h1>
         <div className="card-body">
