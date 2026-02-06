@@ -3,7 +3,7 @@
 A modern, full-stack event management web application that allows users to explore, book, and manage corporate and social events.
 
 ## 🚀 Live Demo
-[Insert Your Vercel/Netlify Link Here]
+[ https://velvety-lokum-5cf985.netlify.app/]
 
 ## ✨ Features
 
