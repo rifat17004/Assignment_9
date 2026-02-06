@@ -9,7 +9,7 @@ const EventDetailsLayout = ({ data }) => {
       </h1>
 
       <div className="grid grid-cols-2 gap-4">
-        {data.map((d) => (
+        {data?.map((d) => (
           <EventCart key={d.id} d={d} />
         ))}
       </div>

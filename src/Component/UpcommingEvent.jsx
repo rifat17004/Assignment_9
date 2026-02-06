@@ -24,7 +24,7 @@ const UpcommingEvent = ({ data }) => {
         </div>
         <div className=" col-span-7  ">
           <div className="grid grid-cols-3  gap-0.5">
-            {data.slice(0, 6).map((d) => (
+            {data.slice(0, 6)?.map((d) => (
               <AllEventsDisplay key={d.id} d={d} />
             ))}
           </div>

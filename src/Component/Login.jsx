@@ -1,9 +1,12 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Datasharing/AuthProvider";
+import { Helmet } from "react-helmet-async";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const { OldUserLogin, error, googleSign } = use(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const handleLogin = (e) => {
@@ -23,6 +26,9 @@ const Login = () => {
 
   return (
     <div className="hero   my-10">
+      <Helmet>
+        <title>Demo || Login</title>
+      </Helmet>
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
         <h1 className="text-5xl font-bold mt-7 text-center">Please Login</h1>
         <div className="card-body">
@@ -35,14 +41,40 @@ const Login = () => {
               placeholder="Email"
             />
             <label className="label">Password</label>
-            <input
-              type="password"
-              name="pass"
-              className="input"
-              placeholder="Password"
-            />
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text font-bold text-gray-600">
+                  Password
+                </span>
+              </label>
+
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  name="pass"
+                  placeholder="Password"
+                  className="input input-bordered w-full pr-12 focus:border-[#FE5A1C]"
+                  required
+                />
+
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#FE5A1C] transition-colors"
+                >
+                  {showPassword ? (
+                    <FaEyeSlash className="text-xl" />
+                  ) : (
+                    <FaEye className="text-xl" />
+                  )}
+                </button>
+              </div>
+            </div>
             <div>
-              <a className="link link-hover">Forgot password?</a>
+              <Link to="/auth/forgotPass" className="link link-hover">
+                {" "}
+                Forgot password?
+              </Link>
               <br />
 
               <Link to="/auth/register" className="link link-hover">

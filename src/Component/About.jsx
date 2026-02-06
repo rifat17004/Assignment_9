@@ -1,10 +1,13 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router";
 
 const About = () => {
   return (
     <div className="bg-white pt-16">
-      {/* 1. Hero Section */}
+      <Helmet>
+        <title>Demo || About</title>
+      </Helmet>
       <section className="w-11/12 mx-auto py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <span className="text-[#FE5A1C] font-bold tracking-widest uppercase text-sm">
@@ -38,12 +41,11 @@ const About = () => {
             alt="Event Planning"
             className="rounded-3xl shadow-2xl z-10 relative"
           />
-          {/* Decorative element */}
+
           <div className="absolute -bottom-6 -left-6 w-64 h-64 bg-orange-100 rounded-full -z-0"></div>
         </div>
       </section>
 
-      {/* 2. Stats Bar */}
       <section className="bg-gray-50 py-12 border-y border-gray-100">
         <div className="w-11/12 mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
@@ -65,13 +67,11 @@ const About = () => {
         </div>
       </section>
 
-      {/* 3. Core Values */}
       <section className="w-11/12 mx-auto py-24 text-center">
         <h2 className="text-4xl font-bold text-gray-800 mb-16">
           Why Choose Us?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Value 1 */}
           <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
             <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#FE5A1C]">
               <svg
@@ -96,7 +96,6 @@ const About = () => {
             </p>
           </div>
 
-          {/* Value 2 */}
           <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
             <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#FE5A1C]">
               <svg
@@ -121,7 +120,6 @@ const About = () => {
             </p>
           </div>
 
-          {/* Value 3 */}
           <div className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
             <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#FE5A1C]">
               <svg

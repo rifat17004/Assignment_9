@@ -1,11 +1,13 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, use, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../Component/Firebase/Firebase.init";
 
@@ -32,11 +34,13 @@ const AuthProvider = ({ children }) => {
       });
   };
   // email pass authentacion create new user
-  const emailPassAuthen = (email, password) => {
+  const emailPassAuthen = (email, password, name, photo) => {
     setLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        updateUsarProfile(name, photo, user);
+
         setError("");
         alert("User Created Succesfully");
       })
@@ -75,6 +79,38 @@ const AuthProvider = ({ children }) => {
         setError(error);
       });
   };
+
+  // update Profile
+  const updateUsarProfile = (name, photo, user) => {
+    setLoading(true);
+    updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    })
+      .then(() => {
+        alert("profile Updated");
+        setUser({ ...user, displayName: name, photoURL: photo });
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+      });
+  };
+
+  // reset email
+  const resetEmailUser = (email) => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        alert("Link has beed sent to your gmail");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setError(error);
+        console.log(error);
+        // ..
+      });
+  };
   // managing user
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
@@ -88,7 +124,10 @@ const AuthProvider = ({ children }) => {
     googleSign,
     OldUserLogin,
     signOutUser,
+    updateUsarProfile,
+    resetEmailUser,
     user,
+    setUser,
     error,
     loading,
   };

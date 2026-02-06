@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const EventGallery = () => {
   const galleryData = [
@@ -48,8 +49,10 @@ const EventGallery = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen py-16">
+      <Helmet>
+        <title>Demo || Gallery</title>
+      </Helmet>
       <div className="w-11/12 mx-auto">
-        {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl font-black text-gray-900 mb-4">
             Event <span className="text-[#FE5A1C]">Gallery</span>
@@ -60,23 +63,19 @@ const EventGallery = () => {
           </p>
         </div>
 
-        {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {galleryData.map((item) => (
             <div
               key={item.id}
               className="group relative overflow-hidden rounded-3xl bg-white shadow-lg cursor-pointer h-80"
             >
-              {/* Image */}
               <img
                 src={item.image}
                 alt={item.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
 
-              {/* Gradient Overlay (Visible on Hover) */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                {/* Content that slides up */}
                 <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                   <span className="text-[#FE5A1C] font-bold text-sm uppercase tracking-widest">
                     {item.date}
@@ -107,7 +106,6 @@ const EventGallery = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
         <div className="mt-20 text-center">
           <h3 className="text-2xl font-bold text-gray-800">
             Ready to start your own event?

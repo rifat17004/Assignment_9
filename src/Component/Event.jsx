@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import BookAllEvent from "./BookAllEvent";
 import { useLoaderData } from "react-router";
+import { Helmet } from "react-helmet-async";
 
 const Event = () => {
   const data = useLoaderData();
@@ -8,6 +9,9 @@ const Event = () => {
   const displayData = showAll ? data : data.slice(0, 4);
   return (
     <div className="w-11/12 mx-auto my-10">
+      <Helmet>
+        <title>Demo || Event</title>
+      </Helmet>
       <h1 className="text-5xl font-bold">All event</h1>
       <div>
         {displayData.map((d) => (

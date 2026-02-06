@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useEffect } from "react";
 import { FaRegUserCircle } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
 import logo from "../assets/logo.png";
@@ -8,7 +8,6 @@ import { AuthContext } from "../Datasharing/AuthProvider";
 const NavBar = () => {
   const { user, signOutUser } = use(AuthContext);
 
-  console.log(user);
   const link = (
     <>
       <li className="text-2xl mx-5">
@@ -42,16 +41,28 @@ const NavBar = () => {
         </NavLink>
       </li>
       {user && (
-        <li className="text-2xl mx-5">
-          <NavLink
-            to="/eventGallery"
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "active" : ""
-            }
-          >
-            Gallery
-          </NavLink>
-        </li>
+        <>
+          <li className="text-2xl mx-5">
+            <NavLink
+              to="/eventGallery"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }
+            >
+              Gallery
+            </NavLink>
+          </li>
+          <li className="text-2xl mx-5">
+            <NavLink
+              to="/profile"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }
+            >
+              Profile
+            </NavLink>
+          </li>
+        </>
       )}
     </>
   );

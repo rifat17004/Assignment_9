@@ -10,6 +10,8 @@ import PrivateRoutes from "./PrivateRoutes";
 import { Suspense } from "react";
 import PageNotFound from "../Component/PageNotFound";
 import EventGallery from "../Component/EventGallery";
+import Profile from "../Component/Profile";
+import ForgotPassword from "../Component/ForgotPassword";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +54,21 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
+      {
+        path: "/profile",
+
+        element: (
+          <Suspense
+            fallback={
+              <span className="loading loading-spinner loading-2xl"></span>
+            }
+          >
+            <PrivateRoutes>
+              <Profile />
+            </PrivateRoutes>
+          </Suspense>
+        ),
+      },
     ],
   },
   {
@@ -60,6 +77,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/auth/login", Component: Login },
       { path: "/auth/register", Component: Register },
+      { path: "/auth/forgotPass", Component: ForgotPassword },
     ],
   },
   { path: "*", Component: PageNotFound },
